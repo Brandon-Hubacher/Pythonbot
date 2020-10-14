@@ -18,6 +18,8 @@ def webhook():
   if data['name'] != 'Pythonbot':
     if data['name'] == 'HorseNamed Horse':
       msg = "You're the coolest brandon"
+    elif data['name'] == 'Alec Hubacher':
+      msg = "Alec big dumb"
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     #comment
     #msg = "Why hello there"
