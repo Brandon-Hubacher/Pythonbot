@@ -16,10 +16,7 @@ def webhook():
 
   # We don't want to reply to ourselves!
   if data['name'] != 'Pythonbot':
-	msg = "what up kiddos"
-    #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
-    #comment
-    #msg = "Why hello there"
+    msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     send_message(msg)
 
   return "ok", 200
