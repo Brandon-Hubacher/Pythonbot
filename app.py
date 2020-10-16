@@ -24,6 +24,8 @@ def webhook():
     #comment
     #msg = "Why hello there"
     send_message(msg)
+    
+   if data['text'] == '!rank':
 
   return "ok", 200
 
