@@ -16,16 +16,12 @@ def webhook():
 
   # We don't want to reply to ourselves!
   if data['name'] != 'Pythonbot':
-    if data['name'] == 'HorseNamed Horse':
-      msg = "You're the coolest brandon"
-    elif data['name'] == 'Alec Hubacher':
-      msg = "Alec big dumb"
+		if data['text'] == '!rank':
+		  msg = data["name"] + " is first!"
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     #comment
     #msg = "Why hello there"
     send_message(msg)
-    
-   if data['text'] == '!rank':
 
   return "ok", 200
 
