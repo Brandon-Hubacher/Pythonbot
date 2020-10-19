@@ -1,6 +1,15 @@
-personDict = {}
+import re, json, requests
 
-with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+personDict = {}
+# "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
+
+url = 'https://raw.githubusercontent.com/Mr-Bari-99/Pythonbot/main/FinalPersonDataPYTHON.json?token=ADZ344HOGQSGXWDSQLNZN2S7RX24G'
+resp = requests.get(url)
+data = json.loads(resp.text)
+#print(data)
+
+
+with open(data, 'r') as rf:
     for line in rf:
         variableList = line.split(',')
         id = variableList[0]
@@ -8,8 +17,8 @@ with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
         personDict[id] = variableList
 
     #print(personDict.get("35762170"))
-    print(personDict.values())
-    print(personDict.get("35762170").__getitem__(8))
+    #print(personDict.values())
+    #print(personDict.get("35762170").__getitem__(8))
 
 
 #{
