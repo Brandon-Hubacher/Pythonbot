@@ -4,7 +4,7 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from FormatFilePY import personDict
+#rom FormatFilePY import personDict
 
 from flask import Flask, request
 
@@ -21,25 +21,25 @@ def webhook():
 
   if data['name'] != 'Pythonbot':
     msg = "recognizes you sent message"
-    if data['id'] in personDict:
-      if data['text'] == "!LR":
-        msg = data['name']+" LR:",personDict.get(data['id'].__getitem__(1))
-      elif data['text'] == "!LR rank":
-        msg = data['name']+" LR rank:",personDict.get(data['id'].__getitem__(2))
-      elif data['text'] == "!LG":
-        msg = data['name']+" LG:",personDict.get(data['id'].__getitem__(3))
-      elif data['text'] == "!LG rank":
-        msg = data['name']+" LG rank:",personDict.get(data['id'].__getitem__(4))
-      elif data['text'] == "!LRPerLG":
-        msg = data['name']+" LR per LG:",personDict.get(data['id'].__getitem__(5))
-      elif data['text'] == "!LRPerLGrank":
-        msg = data['name']+" LR per LG rank:",personDict.get(data['id'].__getitem__(6))
-      elif data['text'] == "!LRPerMS":
-        msg = data['name']+" LR per MS:",personDict.get(data['id'].__getitem__(7))
-      elif data['text'] == "!LRPerMSrank":
-        msg = data['name']+" LR per MS rank:",personDict.get(data['id'].__getitem__(8))
-      elif data['text'] == "!help":
-        msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
+    #if data['id'] in personDict:
+    #  if data['text'] == "!LR":
+    #    msg = data['name']+" LR:",personDict.get(data['id'].__getitem__(1))
+    #  elif data['text'] == "!LR rank":
+    #    msg = data['name']+" LR rank:",personDict.get(data['id'].__getitem__(2))
+    #  elif data['text'] == "!LG":
+    #    msg = data['name']+" LG:",personDict.get(data['id'].__getitem__(3))
+    #  elif data['text'] == "!LG rank":
+    #    msg = data['name']+" LG rank:",personDict.get(data['id'].__getitem__(4))
+    #  elif data['text'] == "!LRPerLG":
+    #    msg = data['name']+" LR per LG:",personDict.get(data['id'].__getitem__(5))
+    #  elif data['text'] == "!LRPerLGrank":
+    #   msg = data['name']+" LR per LG rank:",personDict.get(data['id'].__getitem__(6))
+    # elif data['text'] == "!LRPerMS":
+    #   msg = data['name']+" LR per MS:",personDict.get(data['id'].__getitem__(7))
+    # elif data['text'] == "!LRPerMSrank":
+    #   msg = data['name']+" LR per MS rank:",personDict.get(data['id'].__getitem__(8))
+    # elif data['text'] == "!help":
+    #   msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
     send_message(msg)
   # msg = 'Recieved {}'.format(data))
   # msg = '{}, you sent "{}".'.format(data['name'], data['text'])
