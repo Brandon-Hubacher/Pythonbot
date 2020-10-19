@@ -40,7 +40,7 @@ def webhook():
         msg = data['name']+" LR per MS rank:",personDict.get(data['id'].__getitem__(8))
       elif data['text'] == "!help":
         msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
-  send_message(msg)
+    send_message(msg)
   # msg = 'Recieved {}'.format(data))
   # msg = '{}, you sent "{}".'.format(data['name'], data['text'])
 
