@@ -8,8 +8,8 @@ with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
         personDict[id] = variableList
 
     #print(personDict.get("35762170"))
-    print(personDict.values())
-    print(personDict.get("35762170").__getitem__(8))
+    #print(personDict.values())
+    #print(personDict.get("35762170").__getitem__(8))
 
 
 #{
