@@ -1,6 +1,6 @@
 personDict = {}
-
-with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+# "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
+with open(, 'r') as rf: 
     for line in rf:
         variableList = line.split(',')
         id = variableList[0]
