@@ -4,11 +4,20 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from FormatFilePY import personDict
+#from FormatFilePY import personDict
 
 from flask import Flask, request
 
 app = Flask(__name__)
+
+personDict = {}
+
+with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+    for line in rf:
+        variableList = line.split(',')
+        id = variableList[0]
+        variableList.pop(0)
+        personDict[id] = variableList
 
 
 @app.route('/', methods=['POST'])
