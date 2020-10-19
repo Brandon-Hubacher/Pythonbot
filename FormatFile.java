@@ -60,7 +60,7 @@ public class FormatFile {
                 }
             }
 
-            FileWriter writer = new FileWriter("C:\\Users\\brandon\\Desktop\\GroupMeOrganizedData.json");
+            FileWriter writer = new FileWriter("C:\\Users\\brandon\\Desktop\\PythonOrganizedData.json"); //"C:\\Users\\brandon\\Desktop\\GroupMeOrganizedData.json"
             writer.write(sb.toString());
             scanner.close();
             writer.close();
