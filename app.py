@@ -16,6 +16,7 @@ def webhook():
 
   # We don't want to reply to ourselves!
   if data['name'] != 'Pythonbot':
+    msg = "WORK"
     if data['text'] == "!LR":
       msg = "What up loser"
       #get rank for corresponding ID
