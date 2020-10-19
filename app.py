@@ -16,9 +16,24 @@ def webhook():
 
   # We don't want to reply to ourselves!
   if data['name'] != 'Pythonbot':
-    msg = "You cool"
-    if data['text'] == "!rank":
-      msg = "You're number one!"
+    if data['text'] == "!LR":
+      #get rank for corresponding ID
+    elif data['text'] == "!LG":
+      #get rank for corresponding ID
+    elif data['text'] == "!LRrank":
+      #get rank for corresponding ID
+    elif data['text'] == "!LGrank":
+      #get rank for corresponding ID
+    elif data['text'] == "!LRPerLG":
+      #get rank for corresponding ID
+    elif data['text'] == "!LRPerLGrank":
+      #get rank for corresponding ID
+    elif data['text'] == "!LRPerMS":
+      #get rank for corresponding ID
+    elif data['text'] == "!LRPerMSrank":
+      #get rank for corresponding ID
+    elif data['text'] == "!help":
+      msg = "!LR"+"\n"+"!LG"+"\n"+"!LRrank"+"\n"+"!LGrank"+"\n"+"!LRPerLG"+"\n"+"!LRPerLGrank"+"\n"+"!LRPerMS"+"\n"+"!LRPerMSrank"+"\n"+"!help"
   send_message(msg)
     #msg = 'Recieved {}'.format(data))
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
