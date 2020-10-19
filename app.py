@@ -16,9 +16,11 @@ def webhook():
 
   # We don't want to reply to ourselves!
   if data['name'] != 'Pythonbot':
-    msg = 'Recieved {}'.format(data))
+    if data['text'] == !rank:
+      msg = "You're number one!"
+    #msg = 'Recieved {}'.format(data))
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
-    send_message(msg)
+  send_message(msg)
 
   return "ok", 200
 
