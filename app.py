@@ -40,24 +40,24 @@ def webhook():
   #if personDict.has_key(data[id()])
   #FormatFilePY.makePersonDict()
   if data['name'] != 'Pythonbot':
-    msg = "recognizes you sent message"
+    msg = "Sorry, you haven't been accounted for"
     if data['sender_id'] in dict.keys():
       if data['text'] == "!LR":
         msg = "Likes Received"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(1))
       elif data['text'] == "!LRrank":
-        msg = data['name']+" LRrank:",dict.get(data['sender_id']).__getitem__(2)
+        msg = "Likes Received Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(2))
       elif data['text'] == "!LG":
-        msg = data['name']+" LG:",dict.get(data['sender_id']).__getitem__(3)
+        msg = "Likes Given"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(3))
       elif data['text'] == "!LGrank":
-        msg = data['name']+" LGrank:",dict.get(data['sender_id'].__getitem__(4))
+        msg = "Likes Given Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(4))
       elif data['text'] == "!LRPerLG":
-        msg = data['name']+" LR per LG:",dict.get(data['sender_id'].__getitem__(5))
+        msg = "Likes Received per Likes Given"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(5))
       elif data['text'] == "!LRPerLGrank":
-        msg = data['name']+" LR per LG rank:",dict.get(data['sender_id'].__getitem__(6))
+        msg = "Likes Received per Likes Given Rank"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(6))
       elif data['text'] == "!LRPerMS":
-        msg = data['name']+" LR per MS:",dict.get(data['sender_id'].__getitem__(7))
+        msg = "Likes Received per Messages Sent"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(7))
       elif data['text'] == "!LRPerMSrank":
-        msg = data['name']+" LR per MS rank:",dict.get(data['sender_id'].__getitem__(8))
+        msg = "Likes Received per Messages Sent Rank"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(8))
       elif data['text'] == "!help":
         msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
     send_message(msg)
