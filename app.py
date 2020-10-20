@@ -10,13 +10,12 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+dict = FormatFilePY.getPersonDict()
 
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
-  
-  dict = FormatFilePY.getPersonDict()
 
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
