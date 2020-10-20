@@ -1,20 +1,17 @@
-import re, json, requests
+def makePersonDict():
+    personDict = {}
 
-personDict = {}
-# "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
+    with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+        for line in rf:
+            variableList = line.split(',')
+            id = variableList[0]
+            variableList.pop(0)
+            personDict[id] = variableList
 
-url = 'https://raw.githubusercontent.com/Mr-Bari-99/Pythonbot/main/FinalPersonDataPYTHON.json?token=ADZ344HOGQSGXWDSQLNZN2S7RX24G'
-resp = requests.get(url)
-data = json.loads(resp.text)
-#print(data)
-
-
-with open(data, 'r') as rf:
-    for line in rf:
-        variableList = line.split(',')
-        id = variableList[0]
-        variableList.pop(0)
-        personDict[id] = variableList
+        #print(personDict.get("35762170"))
+        #print(personDict.values())
+        #print(personDict.get("35762170").__getitem__(8))
+        return personDict
 
     #print(personDict.get("35762170"))
     #print(personDict.values())
