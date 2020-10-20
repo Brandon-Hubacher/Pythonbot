@@ -1,21 +1,19 @@
-class FormatFilePY:
-    
-    def makePersonDict():
-        personDict = {}
-        # FinalPersonDataPYTHON.json
-        # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
+def makePersonDict():
+    personDict = {}
+    # FinalPersonDataPYTHON.json
+    # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
 
-        with open("Pythonbot/FinalPersonDataPYTHON.json", 'r') as rf:
-            for line in rf:
-                variableList = line.split(',')
-                id = variableList[0]
-                variableList.pop(0)
-                personDict[id] = variableList
+    with open("Pythonbot/FinalPersonDataPYTHON.json", 'r') as rf:
+        for line in rf:
+            variableList = line.split(',')
+            id = variableList[0]
+            variableList.pop(0)
+            personDict[id] = variableList
 
-            #print(personDict.get("35762170"))
-            #print(personDict.values())
-            #print(personDict.get("35762170").__getitem__(8))
-            return personDict
+        #print(personDict.get("35762170"))
+        #print(personDict.values())
+        #print(personDict.get("35762170").__getitem__(8))
+        return personDict
 
 
 #{
