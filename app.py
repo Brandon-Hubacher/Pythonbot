@@ -19,8 +19,6 @@ def getPersonDict():
               id = variableList[0]
               variableList.pop(0)
               personDict[id] = variableList
-
-        
       return personDict
     
 dict = getPersonDict()    
