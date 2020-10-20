@@ -4,18 +4,35 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-import FormatFilePY
+#import FormatFilePY
 
 from flask import Flask, request
 
 app = Flask(__name__)
 
-dict = FormatFilePY.getPersonDict()
+def makePersonDict():
+    personDict = {}
+    # FinalPersonDataPYTHON.json
+    # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
+
+    with open("FinalPersonDataPYTHON.json", 'r') as rf:
+        for line in rf:
+            variableList = line.split(',')
+            id = variableList[0]
+            variableList.pop(0)
+            personDict[id] = variableList
+
+        #print(personDict.get("35762170"))
+        #print(personDict.values())
+        #print(personDict.get("35762170").__getitem__(8))
+        return personDict
 
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
+  
+  dict = FormatFilePY.getPersonDict()
 
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
