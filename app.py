@@ -45,7 +45,7 @@ def webhook():
     #if data['id'] in dict.keys():
     if data['text'] == "!LR":
       #msg = "hi "+len(dict).__str__()
-      msg = data['name']+" LR:",dict.get(data['sender_id'].__getitem__(1))
+      msg = data['name']+" LR:",dict.get(data['sender_id']).__getitem__(1)
       #msg = "hi"
       #msg = "hi "+data['id']
     elif data['text'] == "!LR rank":
