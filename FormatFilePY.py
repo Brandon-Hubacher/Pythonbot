@@ -1,15 +1,17 @@
-personDict = {}
+def makePersonDict():
+    personDict = {}
 
-with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
-    for line in rf:
-        variableList = line.split(',')
-        id = variableList[0]
-        variableList.pop(0)
-        personDict[id] = variableList
+    with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+        for line in rf:
+            variableList = line.split(',')
+            id = variableList[0]
+            variableList.pop(0)
+            personDict[id] = variableList
 
-    #print(personDict.get("35762170"))
-    print(personDict.values())
-    print(personDict.get("35762170").__getitem__(8))
+        #print(personDict.get("35762170"))
+        #print(personDict.values())
+        #print(personDict.get("35762170").__getitem__(8))
+        return personDict
 
 
 #{
