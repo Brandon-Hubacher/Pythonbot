@@ -58,7 +58,7 @@ def webhook():
       elif data['text'] == "!LRPERMSRANK":
         msg = "Likes Received per Messages Sent Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(8))
       elif data['text'] == "!HELP":
-        msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
+        msg = "!LR" + "\n" + "!LG" + "\n" + "!LRRANK" + "\n" + "!LGRANK" + "\n" + "!LRPERLG" + "\n" + "!LRPERLGRANK" + "\n" + "!LRPERMS" + "\n" + "!LRPERMSRANK" + "\n" + "!HELP"
     send_message(msg)
   # msg = 'Recieved {}'.format(data))
   # msg = '{}, you sent "{}".'.format(data['name'], data['text'])
