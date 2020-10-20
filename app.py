@@ -10,7 +10,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-def makePersonDict():
+def getPersonDict():
     personDict = {}
     # FinalPersonDataPYTHON.json
     # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
@@ -32,7 +32,7 @@ def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
   
-  dict = FormatFilePY.getPersonDict()
+  dict = getPersonDict()
 
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
