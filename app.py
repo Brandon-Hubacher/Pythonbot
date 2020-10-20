@@ -11,15 +11,6 @@ from flask import Flask, request
 app = Flask(__name__)
 
 #personDict = {}
-#tracker = 0
-#if(tracker == 0):
-#  with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
-#      for line in rf:
-#        variableList = line.split(',')
-#        id = variableList[0]
-#        variableList.pop(0)
-#        personDict[id] = variableList
-#      tracker += 1
 
 
 @app.route('/', methods=['POST'])
@@ -32,6 +23,15 @@ def webhook():
 
   if data['name'] != 'Pythonbot':
     msg = "recognizes you sent message"
+    tracker = 0
+    if(tracker == 0):
+      with open("C:\\Users\\brandon\\Desktop\\FinalPersonData.json", 'r') as rf:
+          for line in rf:
+            variableList = line.split(',')
+            id = variableList[0]
+            variableList.pop(0)
+            personDict[id] = variableList
+          tracker += 1
     #if data['id'] in personDict:
     #  if data['text'] == "!LR":
     #    msg = data['name']+" LR:",personDict.get(data['id'].__getitem__(1))
