@@ -39,7 +39,7 @@ def webhook():
   #FormatFilePY.makePersonDict()
   if data['name'] != 'Pythonbot':
     msg = "recognizes you sent message"
-    if data['id'] in dict:
+    if data['id'] in dict.keys():
       if data['text'] == "!LR":
         msg = data['name']+" LR:",dict.get(data['id'].__getitem__(1))
       elif data['text'] == "!LR rank":
