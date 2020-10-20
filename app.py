@@ -37,7 +37,8 @@ def webhook():
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
   #FormatFilePY.makePersonDict()
-  if data['name'] != 'Pythonbot':
+      #'Pythonbot'
+  if data['name'] != 'Tanner':
     #msg = "Sorry, you haven't been accounted for"
     if data['sender_id'] in dict.keys():
       if data['text'] == "!LR":
