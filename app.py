@@ -15,29 +15,31 @@ app = Flask(__name__)
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
+  
+  dict = FormatFilePY.getPersonDict()
 
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
   #FormatFilePY.makePersonDict()
   if data['name'] != 'Pythonbot':
     msg = "recognizes you sent message"
-    if data['id'] in FormatFilePY.getPersonDict():
+    if data['id'] in dict:
       if data['text'] == "!LR":
-        msg = data['name']+" LR:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(1))
+        msg = data['name']+" LR:",dict.get(data['id'].__getitem__(1))
       elif data['text'] == "!LR rank":
-        msg = data['name']+" LR rank:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(2))
+        msg = data['name']+" LR rank:",dict.get(data['id'].__getitem__(2))
       elif data['text'] == "!LG":
-        msg = data['name']+" LG:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(3))
+        msg = data['name']+" LG:",dict.get(data['id'].__getitem__(3))
       elif data['text'] == "!LG rank":
-        msg = data['name']+" LG rank:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(4))
+        msg = data['name']+" LG rank:",dict.get(data['id'].__getitem__(4))
       elif data['text'] == "!LRPerLG":
-        msg = data['name']+" LR per LG:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(5))
+        msg = data['name']+" LR per LG:",dict.get(data['id'].__getitem__(5))
       elif data['text'] == "!LRPerLGrank":
-        msg = data['name']+" LR per LG rank:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(6))
+        msg = data['name']+" LR per LG rank:",dict.get(data['id'].__getitem__(6))
       elif data['text'] == "!LRPerMS":
-        msg = data['name']+" LR per MS:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(7))
+        msg = data['name']+" LR per MS:",dict.get(data['id'].__getitem__(7))
       elif data['text'] == "!LRPerMSrank":
-        msg = data['name']+" LR per MS rank:",FormatFilePY.getPersonDict().get(data['id'].__getitem__(8))
+        msg = data['name']+" LR per MS rank:",dict.get(data['id'].__getitem__(8))
       elif data['text'] == "!help":
         msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
     send_message(msg)
