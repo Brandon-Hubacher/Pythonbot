@@ -15,8 +15,15 @@ app = Flask(__name__)
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
-    
-  def getPersonDict():
+  
+  #if bool(dict) == false:
+  #  dict = getPersonDict()
+
+  # We don't want to reply to ourselves!
+  #if personDict.has_key(data[id()])
+  #FormatFilePY.makePersonDict()
+  if data['name'] != 'Pythonbot':
+    def getPersonDict():
     personDict = {}
     # FinalPersonDataPYTHON.json
     # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
@@ -33,15 +40,7 @@ def webhook():
         #print(personDict.get("35762170").__getitem__(8))
         return personDict
     
-  dict = getPersonDict()
-  
-  #if bool(dict) == false:
-  #  dict = getPersonDict()
-
-  # We don't want to reply to ourselves!
-  #if personDict.has_key(data[id()])
-  #FormatFilePY.makePersonDict()
-  if data['name'] != 'Pythonbot':
+    dict = getPersonDict()
     msg = "recognizes you sent message"
     #if data['id'] in dict.keys():
     if data['text'] == "!LR":
