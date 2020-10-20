@@ -10,7 +10,13 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-def getPersonDict():
+#dict = getPersonDict()
+@app.route('/', methods=['POST'])
+def webhook():
+  data = request.get_json()
+  log('Recieved {}'.format(data))
+    
+  def getPersonDict():
     personDict = {}
     # FinalPersonDataPYTHON.json
     # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
@@ -26,12 +32,6 @@ def getPersonDict():
         #print(personDict.values())
         #print(personDict.get("35762170").__getitem__(8))
         return personDict
-
-#dict = getPersonDict()
-@app.route('/', methods=['POST'])
-def webhook():
-  data = request.get_json()
-  log('Recieved {}'.format(data))
     
   dict = getPersonDict()
   
