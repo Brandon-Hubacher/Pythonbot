@@ -41,21 +41,21 @@ def webhook():
     msg = "recognizes you sent message"
     #if data['id'] in dict.keys():
     if data['text'] == "!LR":
-      msg = dict.get(data['id']).__getitem__(0)#+" LR:",dict.get(data['id'].__getitem__(1))
+      msg = data['name']+" LR:",dict.get(data['id'].__getitem__(1))
     elif data['text'] == "!LR rank":
-      msg = dict.get(data['id']).__getitem__(0)+" LR rank:",dict.get(data['id'].__getitem__(2))
+      msg = data['name']+" LR rank:",dict.get(data['id'].__getitem__(2))
     elif data['text'] == "!LG":
-      msg = dict.get(data['id']).__getitem__(0)+" LG:",dict.get(data['id'].__getitem__(3))
+      msg = data['name']+" LG:",dict.get(data['id'].__getitem__(3))
     elif data['text'] == "!LG rank":
-      msg = dict.get(data['id']).__getitem__(0)+" LG rank:",dict.get(data['id'].__getitem__(4))
+      msg = data['name']+" LG rank:",dict.get(data['id'].__getitem__(4))
     elif data['text'] == "!LRPerLG":
-      msg = dict.get(data['id']).__getitem__(0)+" LR per LG:",dict.get(data['id'].__getitem__(5))
+      msg = data['name']+" LR per LG:",dict.get(data['id'].__getitem__(5))
     elif data['text'] == "!LRPerLGrank":
-      msg = dict.get(data['id']).__getitem__(0)+" LR per LG rank:",dict.get(data['id'].__getitem__(6))
+      msg = data['name']+" LR per LG rank:",dict.get(data['id'].__getitem__(6))
     elif data['text'] == "!LRPerMS":
-      msg = dict.get(data['id']).__getitem__(0)+" LR per MS:",dict.get(data['id'].__getitem__(7))
+      msg = data['name']+" LR per MS:",dict.get(data['id'].__getitem__(7))
     elif data['text'] == "!LRPerMSrank":
-      msg = dict.get(data['id']).__getitem__(0)+" LR per MS rank:",dict.get(data['id'].__getitem__(8))
+      msg = data['name']+" LR per MS rank:",dict.get(data['id'].__getitem__(8))
     elif data['text'] == "!help":
       msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
   send_message(msg)
