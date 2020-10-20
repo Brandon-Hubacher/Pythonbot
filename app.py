@@ -49,7 +49,7 @@ def webhook():
       elif data['text'] == "!LGrank":
         msg = "Likes Given Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(4))
       elif data['text'] == "!LRPerLG":
-        msg = "Likes Received per Likes Given"+"\n"+data['name']+": "+str(format(dict.get(data['sender_id']).__getitem__(5)), "4.3f")
+        msg = "Likes Received per Likes Given"+"\n"+data['name']+": "+str(format(float(dict.get(data['sender_id']).__getitem__(5))), "4.3f")
       elif data['text'] == "!LRPerLGrank":
         msg = "Likes Received per Likes Given Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(6))
       elif data['text'] == "!LRPerMS":
