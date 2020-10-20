@@ -49,13 +49,13 @@ def webhook():
       elif data['text'] == "!LGrank":
         msg = "Likes Given Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(4))
       elif data['text'] == "!LRPerLG":
-        msg = "Likes Received per Likes Given"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(5))
+        msg = "Likes Received per Likes Given"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(5))
       elif data['text'] == "!LRPerLGrank":
-        msg = "Likes Received per Likes Given Rank"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(6))
+        msg = "Likes Received per Likes Given Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(6))
       elif data['text'] == "!LRPerMS":
-        msg = "Likes Received per Messages Sent"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(7))
+        msg = "Likes Received per Messages Sent"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(7))
       elif data['text'] == "!LRPerMSrank":
-        msg = "Likes Received per Messages Sent Rank"+"\n"+data['name']+": "str(dict.get(data['sender_id']).__getitem__(8))
+        msg = "Likes Received per Messages Sent Rank"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(8))
       elif data['text'] == "!help":
         msg = "!LR" + "\n" + "!LG" + "\n" + "!LRrank" + "\n" + "!LGrank" + "\n" + "!LRPerLG" + "\n" + "!LRPerLGrank" + "\n" + "!LRPerMS" + "\n" + "!LRPerMSrank" + "\n" + "!help"
     send_message(msg)
