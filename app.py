@@ -49,7 +49,8 @@ def webhook():
       msg = "hi"
     elif data['text'] == "!LR rank":
       #msg = data['name']+" LR rank:",dict.get(data['id'].__getitem__(2))
-      msg = "hi "+data['id]
+      #msg = "hi "+data['id]
+      msg = "what LG"
     elif data['text'] == "!LG":
       msg = data['name']+" LG:",dict.get(data['id'].__getitem__(3))
     elif data['text'] == "!LG rank":
