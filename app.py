@@ -13,7 +13,7 @@ def getPersonDict():
       # FinalPersonDataPYTHON.json
       # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
 
-      with open("FinalPersonDataPYTHON.json", 'r') as rf:
+      with open("FinalPersonData.json", 'r') as rf:
           for line in rf:
               variableList = line.split(',')
               id = variableList[0]
