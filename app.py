@@ -29,10 +29,12 @@ def getPersonDict():
 
 @app.route('/', methods=['POST'])
 def webhook():
+  dict = {}
   data = request.get_json()
   log('Recieved {}'.format(data))
   
-  dict = getPersonDict()
+  if bool(dict) == false:
+    dict = getPersonDict()
 
   # We don't want to reply to ourselves!
   #if personDict.has_key(data[id()])
