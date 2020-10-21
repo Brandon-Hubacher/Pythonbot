@@ -1,5 +1,4 @@
 public class Person {
-    //private String id;
     private String name;
     private int numberOfLikesReceived;
     private int LRRank;
@@ -23,14 +22,8 @@ public class Person {
         LRPerMSRank = 0;
     }
 
-    public void printPersonMap()
-    {
-
-    }
-
     public Person(String name, int a, int b, int c, int d, int e, int f, int g, int h)
     {
-        //this.id = id;
         this.name = name;
         numberOfLikesReceived = a;
         LRRank = b;
@@ -73,13 +66,7 @@ public class Person {
     public int getNumberOfLikesReceived() {
         return numberOfLikesReceived;
     }
-/*
-    public String getId() {
-        return id;
-    }
-
-
- */
+    
     public String getName() {
         return name;
     }
@@ -91,13 +78,7 @@ public class Person {
     public void setFractionOfLRPerMS(double fractionOfLRPerMS) {
         this.fractionOfLRPerMS = fractionOfLRPerMS;
     }
-/*
-    public void setId(String id) {
-        this.id = id;
-    }
 
-
- */
     public void setLGRank(int LGRank) {
         this.LGRank = LGRank;
     }
