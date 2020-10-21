@@ -4,17 +4,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class LikeMapMaker {
-    /* call methods in order of member variable instantiation in constructor
-     */
-    //IDAndName INInst = new IDAndName();
     public static HashMap<String, ArrayList<List<String>>> senderIDAndLikesReceived;
-
-    /*
-    public HashMap<String, ArrayList<List<String>>> getSenderIDAndLikesReceived() {
-        return senderIDAndLikesReceived;
-    }
-
-     */
 
     public LikeMapMaker() {
         senderIDAndLikesReceived = new HashMap<>();
@@ -22,7 +12,6 @@ public class LikeMapMaker {
 
     public void setMap(File f) {
         try {
-            //File file = new File("C:\\Users\\brandon\\Desktop\\GroupMeOrganizedData.json");
             Scanner scan = new Scanner(f);
             ArrayList<String> favList = new ArrayList<String>();
 
@@ -63,7 +52,7 @@ public class LikeMapMaker {
                         favList = interAList;
                     }
                 }
-                if(favoritedLine.contains("\"name\"")) //scan.nextLine().contains("\"name\"")
+                if(favoritedLine.contains("\"name\""))
                 {
                     String line = scan.nextLine();
                     String[] parse = line.split("\"");
@@ -88,7 +77,6 @@ public class LikeMapMaker {
 
                 }
             }
-            //System.out.println(senderIDAndLikesReceived);
             scan.close();
         }
         catch(IOException e) {
