@@ -11,7 +11,6 @@ public class FormatFile {
     public FormatFile(File file)
     {
         try {
-            //File file = new File("C:\\Users\\brandon\\AppData\\Local\\Temp\\Temp3_gmdata.zip\\61672113\\message.json");
             Scanner scanner = new Scanner(file);
             StringBuilder sb = new StringBuilder();
 
@@ -66,7 +65,7 @@ public class FormatFile {
             writer.close();
         }
         catch(IOException e) {
-            System.out.println("Didn't work");
+            System.out.println("Can't find file export");
         }
     }
 }
