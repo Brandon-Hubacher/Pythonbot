@@ -1,2 +1,4 @@
 # Pythonbot
-#ahhhhhhh
+#update
+
+For all your groupme relevant analytical desires
