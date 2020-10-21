@@ -4,14 +4,11 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-#import FormatFilePY
 
 from flask import Flask, request
 
 def getPersonDict():
       personDict = {}
-      # FinalPersonDataPYTHON.json
-      # "C:\\Users\\brandon\\Desktop\\FinalPersonData.json"
 
       with open("FinalPersonData.json", 'r') as rf:
           for line in rf:
@@ -25,21 +22,13 @@ dict = getPersonDict()
 
 app = Flask(__name__)
 
-#dict = getPersonDict()
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
   
-  #if bool(dict) == false:
-  #  dict = getPersonDict()
-
-  # We don't want to reply to ourselves!
-  #if personDict.has_key(data[id()])
-  #FormatFilePY.makePersonDict()
-      #'Pythonbot'
   if data['name'] != 'Alfred':
-    #msg = "Sorry, you haven't been accounted for"
+    #msg = 
     if data['sender_id'] in dict.keys():
       if data['text'] == "!LR":
         msg = "Likes Received"+"\n"+data['name']+": "+str(dict.get(data['sender_id']).__getitem__(1))
